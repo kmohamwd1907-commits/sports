@@ -1,0 +1,200 @@
+!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ملعب لايف | الدوريات العالمية والعربية</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@500;800;900&family=IBM+Plex+Sans+Arabic:wght@400;600&display=swap">
+<style>
+:root{--bg:#eef2f9;--card:#fff;--ink:#0b1b3a;--mute:#5a6785;--line:#dbe2f0;--blue:#1f4bff;--sun:#ffd23f;--red:#ff3b3b;--ad:#e4eaf6;--hd:#0b1b3a;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0a1226;--card:#121c38;--ink:#eef2fc;--mute:#9aa8c7;--line:#223055;--blue:#6f8dff;--ad:#17234a;--hd:#060c1c}}
+:root[data-theme="dark"]{--bg:#0a1226;--card:#121c38;--ink:#eef2fc;--mute:#9aa8c7;--line:#223055;--blue:#6f8dff;--ad:#17234a;--hd:#060c1c}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"IBM Plex Sans Arabic","Segoe UI",Tahoma,Arial,sans-serif;line-height:1.7}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--hd);z-index:10}
+h1,h2,h3,.logo,.num{font-family:Tajawal,"Segoe UI",Tahoma,sans-serif}
+.wrap{max-width:1040px;margin:auto;padding:0 14px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--hd);color:#fff}
+header .wrap:first-child{display:flex;align-items:center;justify-content:space-between;height:54px}
+.logo{font-size:1.6rem;font-weight:900}
+.logo i{font-style:normal;background:var(--sun);color:#0b1b3a;padding:0 8px;border-radius:6px;margin-inline-start:6px}
+#date{font-size:.8rem;opacity:.7}
+.scroll{display:flex;gap:4px;overflow-x:auto}
+#groups button{flex:none;border:0;border-bottom:3px solid transparent;background:none;color:#fff;opacity:.65;padding:8px 16px;font:600 .95rem inherit;font-family:inherit;cursor:pointer}
+#groups button.on{opacity:1;border-color:var(--sun)}
+#chips{padding:12px 0 4px;gap:8px}
+#chips button{flex:none;border:1px solid var(--line);background:var(--card);color:var(--ink);padding:5px 14px;border-radius:99px;font:600 .88rem inherit;font-family:inherit;cursor:pointer}
+#chips button.on{background:var(--blue);border-color:var(--blue);color:#fff}
+.ad{background:var(--ad);border:1px dashed var(--mute);color:var(--mute);display:flex;align-items:center;justify-content:center;font-size:.78rem;margin:16px 0;border-radius:10px}
+.ad.top{height:90px}.ad.mid{height:250px}.ad.side{height:250px;margin-top:16px}
+.title{display:flex;align-items:center;gap:10px;margin:16px 0 4px}
+.title h1{font-size:1.7rem;font-weight:900;margin:0}
+.live{display:none;align-items:center;gap:6px;color:var(--red);font-weight:800;font-size:.8rem}
+.live.on{display:inline-flex}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--red);animation:p 1.2s infinite}
+@keyframes p{50%{opacity:.25}}
+@media(prefers-reduced-motion:reduce){.dot{animation:none}}
+.banner{background:var(--sun);color:#0b1b3a;border-radius:10px;padding:8px 12px;font-size:.84rem;margin:8px 0;display:none}
+.banner.on{display:block}
+.strip{display:flex;gap:10px;overflow-x:auto;padding:10px 0 4px;scroll-snap-type:x mandatory}
+.mc{flex:none;width:176px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 12px;scroll-snap-align:start;font-size:.88rem}
+.mc div{display:flex;justify-content:space-between;font-weight:600;gap:6px}
+.mc span{color:var(--mute);font-size:.75rem}
+.cols{display:grid;grid-template-columns:1fr;gap:0 22px}
+@media(min-width:800px){.cols{grid-template-columns:1.7fr 1fr}}
+h2{font-size:1.25rem;font-weight:900;margin:20px 0 10px}
+.list{display:grid;gap:10px}
+.item{display:block;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--line);border-inline-start:4px solid var(--blue);border-radius:12px;padding:11px 14px}
+.item h3{margin:0;font-size:1.02rem;line-height:1.5;font-weight:800}
+.item p{margin:2px 0 0;color:var(--mute);font-size:.8rem}
+.tbl{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+table{width:100%;border-collapse:collapse;font-size:.9rem}
+th,td{padding:9px 8px;text-align:center;border-bottom:1px solid var(--line)}
+tr:last-child td{border:0}
+td:nth-child(2),th:nth-child(2){text-align:right}
+th{color:var(--mute);font-weight:600;font-size:.78rem}
+tr.up td:first-child{box-shadow:inset -4px 0 var(--blue)}
+td b{font-family:Tajawal,sans-serif}
+.empty{color:var(--mute);padding:14px}
+footer{margin:34px 0 10px;text-align:center;color:var(--mute);font-size:.82rem}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap"><div class="logo">ملعب<i>لايف</i></div><span id="date"></span></div>
+  <div class="wrap"><nav class="scroll" id="groups"></nav></div>
+</header>
+
+<div class="wrap">
+  <div class="scroll" id="chips"></div>
+  <div class="ad top">إعلان 728×90 — أعلى الصفحة</div>
+  <div class="title"><h1 id="lname"></h1><span class="live" id="live"><span class="dot"></span> مباشر</span></div>
+  <div class="banner" id="demo">وضع تجريبي: البيانات المعروضة أمثلة. ضع مفتاح الـ API في CONFIG لعرض البيانات الحقيقية.</div>
+  <div class="strip" id="strip"></div>
+
+  <div class="cols">
+    <main>
+      <h2>أخبار الدوري</h2>
+      <div class="list" id="news"></div>
+      <div class="ad mid">إعلان 300×250 — وسط الأخبار</div>
+    </main>
+    <aside>
+      <h2>الترتيب</h2>
+      <div class="tbl"><table id="table"></table></div>
+      <div class="ad side">إعلان جانبي 300×250</div>
+    </aside>
+  </div>
+  <footer>© ملعب لايف · سياسة الخصوصية · اتصل بنا</footer>
+</div>
+
+<script>
+/* ====== الإعدادات ====== */
+var CONFIG={
+  apiKey:"",                                   // مفتاح API-Football من api-football.com
+  apiBase:"https://v3.football.api-sports.io", // مصدر النتائج والترتيب
+  rssProxy:"https://api.rss2json.com/v1/api.json?rss_url=" // لتحويل RSS إلى JSON داخل المتصفح
+};
+/* [مفتاح, الاسم, المجموعة, id في API (0 = يُكتشف تلقائيًا), الدولة بالإنجليزية] */
+var L=[
+ ["eg","الدوري المصري","ar",233,"Egypt"],["sa","الدوري السعودي","ar",307,"Saudi-Arabia"],
+ ["ae","دوري الإمارات","ar",301,"United-Arab-Emirates"],["qa","دوري نجوم قطر","ar",305,"Qatar"],
+ ["ma","البطولة المغربية","ar",200,"Morocco"],["dz","الدوري الجزائري","ar",186,"Algeria"],
+ ["tn","الدوري التونسي","ar",202,"Tunisia"],["iq","الدوري العراقي","ar",542,"Iraq"],
+ ["jo","الدوري الأردني","ar",0,"Jordan"],["kw","الدوري الكويتي","ar",0,"Kuwait"],
+ ["om","الدوري العُماني","ar",0,"Oman"],["bh","الدوري البحريني","ar",0,"Bahrain"],
+ ["lb","الدوري اللبناني","ar",0,"Lebanon"],["ly","الدوري الليبي","ar",0,"Libya"],
+ ["sd","الدوري السوداني","ar",0,"Sudan"],["sy","الدوري السوري","ar",0,"Syria"],
+ ["ps","الدوري الفلسطيني","ar",0,"Palestine"],["ye","الدوري اليمني","ar",0,"Yemen"],
+ ["en","الدوري الإنجليزي","eu",39,"England"],["es","الدوري الإسباني","eu",140,"Spain"],
+ ["de","الدوري الألماني","eu",78,"Germany"],["it","الدوري الإيطالي","eu",135,"Italy"],
+ ["fr","الدوري الفرنسي","eu",61,"France"],["nl","الدوري الهولندي","eu",88,"Netherlands"],
+ ["pt","الدوري البرتغالي","eu",94,"Portugal"],["tr","الدوري التركي","eu",203,"Turkey"],
+ ["be","الدوري البلجيكي","eu",144,"Belgium"],["sc","الدوري الاسكتلندي","eu",179,"Scotland"],
+ ["ucl","دوري أبطال أوروبا","cup",2,""],["uel","الدوري الأوروبي","cup",3,""],
+ ["caf","دوري أبطال أفريقيا","cup",12,""],["acl","دوري أبطال آسيا","cup",17,""],
+ ["br","الدوري البرازيلي","wd",71,"Brazil"],["ar","الدوري الأرجنتيني","wd",128,"Argentina"],
+ ["us","الدوري الأمريكي MLS","wd",253,"USA"],["jp","الدوري الياباني","wd",98,"Japan"]
+];
+var G=[["ar","الدوريات العربية"],["eu","أوروبا"],["cup","البطولات"],["wd","العالم"]];
+var curG="ar",cur=L[0],tok=0;
+
+/* ====== مكتبة الجلب ====== */
+function season(){var d=new Date();return d.getMonth()>=6?d.getFullYear():d.getFullYear()-1}
+function api(path){
+  if(!CONFIG.apiKey)return Promise.reject("nokey");
+  return fetch(CONFIG.apiBase+path,{headers:{"x-apisports-key":CONFIG.apiKey}})
+    .then(function(r){return r.json()}).then(function(j){return j.response||[]});
+}
+function leagueId(l){
+  if(l[3])return Promise.resolve(l[3]);
+  return api("/leagues?type=league&country="+l[4]).then(function(r){l[3]=r[0]?r[0].league.id:0;return l[3]});
+}
+function rss(q){
+  var u="https://news.google.com/rss/search?q="+encodeURIComponent(q)+"&hl=ar&gl=EG&ceid=EG:ar";
+  return fetch(CONFIG.rssProxy+encodeURIComponent(u)).then(function(r){return r.json()}).then(function(j){return j.items||[]});
+}
+function esc(s){var d=document.createElement("div");d.textContent=s==null?"":s;return d.innerHTML}
+
+/* ====== أمثلة تجريبية ====== */
+function demo(){
+  var t=["الفريق الأول","الفريق الثاني","الفريق الثالث","الفريق الرابع","الفريق الخامس","الفريق السادس"];
+  return {
+    fx:[[t[0],t[1],"2","1","مباشر"],[t[2],t[3],"0","0","20:00"],[t[4],t[5],"3","1","انتهت"],[t[1],t[3],"1","2","انتهت"]],
+    st:t.map(function(n,i){return [i+1,n,10,25-i*3]}),
+    news:[["عنوان خبر تجريبي رقم 1","#","منذ ساعة"],["عنوان خبر تجريبي رقم 2","#","منذ ساعتين"],["عنوان خبر تجريبي رقم 3","#","منذ 3 ساعات"]]
+  };
+}
+
+/* ====== العرض ====== */
+function paint(d,isDemo){
+  document.getElementById("demo").classList.toggle("on",isDemo);
+  document.getElementById("live").classList.toggle("on",d.fx.some(function(f){return f[4]=="مباشر"}));
+  document.getElementById("strip").innerHTML=d.fx.length?d.fx.map(function(f){
+    return '<div class="mc"><span>'+esc(f[4])+'</span><div>'+esc(f[0])+'<b class="num">'+esc(f[2])+'</b></div><div>'+esc(f[1])+'<b class="num">'+esc(f[3])+'</b></div></div>'}).join(""):'<p class="empty">لا مباريات قريبة.</p>';
+  document.getElementById("table").innerHTML=d.st.length?'<tr><th>#</th><th>الفريق</th><th>لعب</th><th>نقاط</th></tr>'+d.st.map(function(r,i){
+    return '<tr'+(i<3?' class="up"':'')+'><td>'+esc(r[0])+'</td><td>'+esc(r[1])+'</td><td>'+esc(r[2])+'</td><td><b>'+esc(r[3])+'</b></td></tr>'}).join(""):'<tr><td class="empty">الترتيب غير متاح.</td></tr>';
+  document.getElementById("news").innerHTML=d.news.length?d.news.map(function(n){
+    return '<a class="item" target="_blank" rel="noopener" href="'+esc(n[1])+'"><h3>'+esc(n[0])+'</h3><p>'+esc(n[2])+'</p></a>'}).join(""):'<p class="empty">لا أخبار حاليًا.</p>';
+}
+function load(l){
+  var my=++tok,d=demo();
+  document.getElementById("lname").textContent=l[1];
+  paint(d,true);
+  rss(l[1]+" كرة قدم").then(function(items){
+    if(my!=tok||!items.length)return;
+    d.news=items.slice(0,10).map(function(i){return [i.title,i.link,new Date(i.pubDate.replace(" ","T")+"Z").toLocaleDateString("ar-EG")]});
+    paint(d,!CONFIG.apiKey);
+  }).catch(function(){});
+  leagueId(l).then(function(id){
+    if(!id)throw 0;
+    return Promise.all([api("/fixtures?league="+id+"&season="+season()+"&next=8"),api("/standings?league="+id+"&season="+season())]);
+  }).then(function(r){
+    if(my!=tok)return;
+    d.fx=r[0].map(function(f){
+      var s=f.fixture.status.short,live=["1H","2H","HT","ET","LIVE"].indexOf(s)>-1;
+      return [f.teams.home.name,f.teams.away.name,f.goals.home==null?"-":f.goals.home,f.goals.away==null?"-":f.goals.away,
+        live?"مباشر":(s=="FT"?"انتهت":new Date(f.fixture.date).toLocaleTimeString("ar-EG",{hour:"2-digit",minute:"2-digit"}))]});
+    var s0=r[1][0]&&r[1][0].league.standings[0]||[];
+    d.st=s0.map(function(x){return [x.rank,x.team.name,x.all.played,x.points]});
+    paint(d,false);
+  }).catch(function(){});
+}
+function nav(){
+  document.getElementById("groups").innerHTML=G.map(function(g){return '<button data-g="'+g[0]+'"'+(g[0]==curG?' class="on"':'')+'>'+g[1]+'</button>'}).join("");
+  document.getElementById("chips").innerHTML=L.filter(function(l){return l[2]==curG}).map(function(l){return '<button data-k="'+l[0]+'"'+(l==cur?' class="on"':'')+'>'+l[1]+'</button>'}).join("");
+}
+document.getElementById("groups").addEventListener("click",function(e){
+  var b=e.target.closest("button");if(!b)return;
+  curG=b.dataset.g;cur=L.filter(function(l){return l[2]==curG})[0];nav();load(cur);
+});
+document.getElementById("chips").addEventListener("click",function(e){
+  var b=e.target.closest("button");if(!b)return;
+  cur=L.filter(function(l){return l[0]==b.dataset.k})[0];nav();load(cur);
+});
+document.getElementById("date").textContent=new Date().toLocaleDateString("ar-EG",{weekday:"long",day:"numeric",month:"long"});
+nav();load(cur);
+</script>
+</body>
+</html>
